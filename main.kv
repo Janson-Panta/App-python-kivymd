@@ -1,0 +1,399 @@
+<Adm>:
+    Principal:
+    Carrinho:
+    Pagamento:
+
+<Principal>:
+    name:"principal"
+
+    MDFloatLayout:
+        Image:
+            source:"fundoprincipal.png"
+            allow_stretch : True
+            keep_ratio : False
+            pos_hint:{"center_x": 0.5, "center_y":0.5}
+
+        MDRaisedButton:
+            text:"Carrinho"
+            pos_hint:{"center_x": 0.72, "center_y":0.96}
+            on_press:
+                app.root.current ="carrinho"
+                root.manager.transition.direction = "left"
+
+        MDRaisedButton:
+            text:"fechar"
+            pos_hint:{"center_x": 0.15, "center_y":0.04}
+            on_press:
+                app.fechar()
+
+
+################################################################################################################
+
+        MDCard:
+            size_hint: None, None
+            size: "80sp", "80sp"
+            pos_hint: {"center_x": 0.2, "center_y":0.6}
+            elevation: 3
+            md_bg_color: 255/255, 255/255, 0/255, 1
+            ripple_behavior: True
+            on_press:
+                root.add1()
+
+            Image:
+                id: id1
+                source:"bacon.png"
+                size_hint: "0.8sp", "0.8sp"
+                pos_hint:{'center_x': 0.5, 'center_y': 0.5}
+                allow_stretch: True
+                keep_ratio: True
+
+
+
+        MDCard:
+            size_hint: None, None
+            size: "80sp", "80sp"
+            pos_hint: {"center_x": 0.5, "center_y":0.6}
+            elevation: 3
+            md_bg_color: 255/255, 255/255, 0/255, 1
+            ripple_behavior: True
+            on_press:
+                root.add2()
+
+            Image:
+                id: id1
+                source:"xtudo.png"
+                size_hint: "0.8sp", "0.8sp"
+                pos_hint:{'center_x': 0.5, 'center_y': 0.5}
+                allow_stretch: True
+                keep_ratio: True
+
+
+        MDCard:
+            size_hint: None, None
+            size: "80sp", "80sp"
+            pos_hint: {"center_x": 0.8, "center_y":0.6}
+            elevation: 3
+            md_bg_color: 255/255, 255/255, 0/255, 1
+            ripple_behavior: True
+            on_press:
+                root.add3()
+
+            Image:
+                id: id1
+                source:"egg.png"
+                size_hint: "0.8sp", "0.8sp"
+                pos_hint:{'center_x': 0.5, 'center_y': 0.5}
+                allow_stretch: True
+                keep_ratio: True
+
+
+###################################################################################################
+        MDCard:
+            size_hint: None, None
+            size: "80sp", "80sp"
+            pos_hint: {"center_x": 0.2, "center_y":0.4}
+            elevation: 3
+            md_bg_color: 255/255, 255/255, 0/255, 1
+            ripple_behavior: True
+            on_press:
+                root.add4()
+
+            Image:
+                id: id1
+                source:"dog.png"
+                size_hint: "0.8sp", "0.8sp"
+                pos_hint:{'center_x': 0.5, 'center_y': 0.5}
+                allow_stretch: True
+                keep_ratio: True
+
+
+        MDCard:
+            size_hint: None, None
+            size: "80sp", "80sp"
+            pos_hint: {"center_x": 0.5, "center_y":0.4}
+            elevation: 3
+            md_bg_color: 255/255, 255/255, 0/255, 1
+            ripple_behavior: True
+            on_press:
+                root.add5()
+
+            Image:
+                id: id1
+                source:"batata.png"
+                size_hint: "0.8sp", "0.8sp"
+                pos_hint:{'center_x': 0.5, 'center_y': 0.5}
+                allow_stretch: True
+                keep_ratio: True
+
+
+        MDCard:
+            size_hint: None, None
+            size: "80sp", "80sp"
+            pos_hint: {"center_x": 0.8, "center_y":0.4}
+            elevation: 3
+            md_bg_color: 255/255, 255/255, 0/255, 1
+            ripple_behavior: True
+            on_press:
+                root.add6()
+
+            Image:
+                id: id1
+                source:"coca.png"
+                size_hint: "0.8sp", "0.8sp"
+                pos_hint:{'center_x': 0.5, 'center_y': 0.5}
+                allow_stretch: True
+                keep_ratio: True
+
+        MDLabel:
+            id: label1
+            text:" "
+            font_size:"20sp"
+            bold: True
+            pos_hint:{'center_x': 0.66, 'center_y': 0.22}
+
+
+#####################################################################################################
+
+<Carrinho>:
+    name:"carrinho"
+
+    MDFloatLayout:
+        Image:
+            source:"fundo.png"
+            allow_stretch : True
+            keep_ratio : False
+            pos_hint:{"center_x": 0.5, "center_y":0.5}
+
+        MDRaisedButton:
+            text:"voltar"
+            pos_hint:{"center_x": 0.15, "center_y":0.04}
+            on_press:
+                app.root.current = "principal"
+                root.manager.transition.direction = "right"
+################################################################################################################
+        MDFlatButton:
+            id: pedido1
+            text:""
+            bold: True
+            pos_hint:{"center_x": 0.3, "center_y":0.7}
+
+        MDRaisedButton:
+            id: excluir1
+            text:"<- Excluir"
+            bold: True
+            font_size:"13sp"
+            pos_hint:{"center_x": 0.8, "center_y":0.7}
+            disabled: False
+            on_press:
+                root.apaga1()
+
+####################################################################################################
+
+
+        MDFlatButton:
+            id: pedido2
+            text:""
+            bold: True
+            pos_hint:{"center_x": 0.3, "center_y":0.62}
+
+        MDRaisedButton:
+            id: excluir2
+            text:"<- Excluir"
+            bold: True
+            font_size:"13sp"
+            pos_hint:{"center_x": 0.8, "center_y":0.62}
+            disabled: False
+            on_press:
+                root.apaga2()
+
+#######################################################################################################
+
+
+        MDFlatButton:
+            id: pedido3
+            text:""
+            bold: True
+            pos_hint:{"center_x": 0.3, "center_y":0.54}
+
+        MDRaisedButton:
+            id: excluir3
+            text:"<- Excluir"
+            bold: True
+            font_size:"13sp"
+            pos_hint:{"center_x": 0.8, "center_y":0.54}
+            disabled: False
+            on_press:
+                root.apaga3()
+
+########################################################################################################
+
+
+        MDFlatButton:
+            id: pedido4
+            text:""
+            bold: True
+            pos_hint:{"center_x": 0.3, "center_y":0.46}
+
+        MDRaisedButton:
+            id: excluir4
+            text:"<- Excluir"
+            bold: True
+            font_size:"13sp"
+            pos_hint:{"center_x": 0.8, "center_y":0.46}
+            disabled: False
+            on_press:
+                root.apaga4()
+
+
+############################################################################################################
+
+
+        MDFlatButton:
+            id: pedido5
+            text:""
+            bold: True
+            pos_hint:{"center_x": 0.3, "center_y":0.38}
+
+        MDRaisedButton:
+            id: excluir5
+            text:"<- Excluir"
+            bold: True
+            font_size:"13sp"
+            pos_hint:{"center_x": 0.8, "center_y":0.38}
+            disabled: False
+            on_press:
+                root.apaga5()
+
+
+        MDRaisedButton:
+            id: continuar
+            text:"Continuar >"
+            bold: True
+            font_size:"18sp"
+            pos_hint:{"center_x": 0.5, "center_y":0.15}
+            disabled: False
+            on_press:
+                app.root.current = "pagamento"
+
+
+<Pagamento>:
+    name:"pagamento"
+
+
+    MDFloatLayout:
+        Image:
+            source:"fundo2.png"
+            allow_stretch : True
+            keep_ratio : False
+            pos_hint:{"center_x": 0.5, "center_y":0.5}
+
+        MDRaisedButton:
+            text:"voltar"
+            pos_hint:{"center_x": 0.15, "center_y":0.04}
+            on_press:
+                app.root.current = "principal"
+                root.manager.transition.direction = "right"
+
+########################################################################################################
+
+
+        MDCard:
+            size_hint: None, None
+            size: "80sp", "80sp"
+            pos_hint: {"center_x": 0.2, "center_y":0.7}
+            elevation: 3
+            md_bg_color: 255/255, 255/255, 0/255, 1
+            ripple_behavior: True
+            on_press:
+                root.pagamento1()
+
+
+            Image:
+                id: id1
+                source:"pix.png"
+                size_hint: "0.8sp", "0.8sp"
+                pos_hint:{'center_x': 0.5, 'center_y': 0.5}
+                allow_stretch: True
+                keep_ratio: True
+
+
+
+        MDCard:
+            size_hint: None, None
+            size: "80sp", "80sp"
+            pos_hint: {"center_x": 0.5, "center_y":0.7}
+            elevation: 3
+            md_bg_color: 255/255, 255/255, 0/255, 1
+            ripple_behavior: True
+            on_press:
+                root.pagamento2()
+
+
+            Image:
+                id: id1
+                source:"cartao.png"
+                size_hint: "0.8sp", "0.8sp"
+                pos_hint:{'center_x': 0.5, 'center_y': 0.5}
+                allow_stretch: True
+                keep_ratio: True
+
+
+        MDCard:
+            size_hint: None, None
+            size: "80sp", "80sp"
+            pos_hint: {"center_x": 0.8, "center_y":0.7}
+            elevation: 3
+            md_bg_color: 255/255, 255/255, 0/255, 1
+            ripple_behavior: True
+            on_press:
+                root.pagamento3()
+
+
+            Image:
+                id: id1
+                source:"dinheiro.png"
+                size_hint: "0.8sp", "0.8sp"
+                pos_hint:{'center_x': 0.5, 'center_y': 0.5}
+                allow_stretch: True
+                keep_ratio: True
+
+        MDRaisedButton:
+            text:"-- Retirar pedido no local --"
+            pos_hint:{"center_x": 0.5, "center_y":0.55}
+            on_press:
+                root.pegar1()
+
+        MDRaisedButton:
+            text:"-- Solicitar entrega --"
+            pos_hint:{"center_x": 0.5, "center_y":0.45}
+            on_press:
+                root.pegar2()
+
+
+        MDLabel:
+            id: label2
+            text:""
+            font_size:"17sp"
+            bold: True
+            pos_hint:{'center_x': 0.60, 'center_y': 0.32}
+
+        MDLabel:
+            id: label3
+            text:""
+            font_size:"17sp"
+            bold: True
+            pos_hint:{'center_x': 0.60, 'center_y': 0.28}
+
+
+        MDRaisedButton:
+            id: enviar
+            text:"Enviar pedido"
+            bold: True
+            font_size:"18sp"
+            pos_hint:{"center_x": 0.5, "center_y":0.15}
+            disabled: False
+            on_press:
+                root.envia()
+
+
+
